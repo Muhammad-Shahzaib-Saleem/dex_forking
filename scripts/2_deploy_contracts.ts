@@ -1,24 +1,30 @@
-import { ethers,hre } from "hardhat";
-import { SwapERC20__factory } from "../typechain-types";
+import { ethers } from "hardhat";
 
 async function main() {
   const adminAddress = "0xF48C993dea34AFbe3e0Bb28b36A23675e28ec52a";
   const feeCollectingAddress = "0xF48C993dea34AFbe3e0Bb28b36A23675e28ec52a";
 
-  const swap_factory = await hre.ethers.getContractFactory("SwapFactory");
-  const swapFactory = await swap_factory.deploy(adminAddress);
+   const accounts = await ethers.getSigners();
 
-  await swapFactory.deployed();
+  const dC = await ethers.getContractFactory("SwapFactory");
+  const deployedC = await  dC.deploy(adminAddress);
 
+  await deployedC.waitForDeployment();
+  console.log(await deployedC.feeToSetter())
 
+  console.log("Contract Deployment Hash: ",deployedC.deploymentTransaction()?.hash)
   
 
-  await swapFactory.setFeeTo(feeCollectingAddress);
+  const setFeeTX = await deployedC.connect(accounts[0]).setFeeTo(feeCollectingAddress);
+
+  await setFeeTX.wait();
+
+  
 
 
   console.log(
     `admin address ${adminAddress
-    } deployed to ${swapFactory.target}`
+    } deployed to ${deployedC.target}`
   );
 }
 
