@@ -14,6 +14,42 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "FixedPoint",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FixedPoint__factory>;
+    getContractFactory(
+      name: "IUniswapV2Callee",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Callee__factory>;
+    getContractFactory(
+      name: "IUniswapV2Factory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Factory__factory>;
+    getContractFactory(
+      name: "IUniswapV2Pair",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Pair__factory>;
+    getContractFactory(
+      name: "ExampleComputeLiquidityValue",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ExampleComputeLiquidityValue__factory>;
+    getContractFactory(
+      name: "ExampleFlashSwap",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ExampleFlashSwap__factory>;
+    getContractFactory(
+      name: "ExampleOracleSimple",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ExampleOracleSimple__factory>;
+    getContractFactory(
+      name: "ExampleSlidingWindowOracle",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ExampleSlidingWindowOracle__factory>;
+    getContractFactory(
+      name: "ExampleSwapToPrice",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ExampleSwapToPrice__factory>;
+    getContractFactory(
       name: "IERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC20__factory>;
@@ -30,13 +66,33 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IUniswapV2Factory__factory>;
     getContractFactory(
+      name: "IUniswapV2Migrator",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Migrator__factory>;
+    getContractFactory(
       name: "IUniswapV2Pair",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IUniswapV2Pair__factory>;
     getContractFactory(
-      name: "Lock",
+      name: "IUniswapV2Router01",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Lock__factory>;
+    ): Promise<Contracts.IUniswapV2Router01__factory>;
+    getContractFactory(
+      name: "IUniswapV2Router02",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV2Router02__factory>;
+    getContractFactory(
+      name: "IWETH",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWETH__factory>;
+    getContractFactory(
+      name: "IUniswapV1Exchange",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV1Exchange__factory>;
+    getContractFactory(
+      name: "IUniswapV1Factory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IUniswapV1Factory__factory>;
     getContractFactory(
       name: "Migrations",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -54,10 +110,79 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.SwapPair__factory>;
     getContractFactory(
+      name: "SwapRouterV1",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SwapRouterV1__factory>;
+    getContractFactory(
+      name: "SwapRouterV2",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SwapRouterV2__factory>;
+    getContractFactory(
+      name: "DeflatingERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.DeflatingERC20__factory>;
+    getContractFactory(
       name: "ERC20",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC20__factory>;
+    getContractFactory(
+      name: "RouterEventEmitter",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RouterEventEmitter__factory>;
+    getContractFactory(
+      name: "WETH9",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.WETH9__factory>;
+    getContractFactory(
+      name: "UniswapV2Migrator",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.UniswapV2Migrator__factory>;
 
+    getContractAt(
+      name: "FixedPoint",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FixedPoint>;
+    getContractAt(
+      name: "IUniswapV2Callee",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Callee>;
+    getContractAt(
+      name: "IUniswapV2Factory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Factory>;
+    getContractAt(
+      name: "IUniswapV2Pair",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Pair>;
+    getContractAt(
+      name: "ExampleComputeLiquidityValue",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ExampleComputeLiquidityValue>;
+    getContractAt(
+      name: "ExampleFlashSwap",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ExampleFlashSwap>;
+    getContractAt(
+      name: "ExampleOracleSimple",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ExampleOracleSimple>;
+    getContractAt(
+      name: "ExampleSlidingWindowOracle",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ExampleSlidingWindowOracle>;
+    getContractAt(
+      name: "ExampleSwapToPrice",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ExampleSwapToPrice>;
     getContractAt(
       name: "IERC20",
       address: string | ethers.Addressable,
@@ -79,15 +204,40 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IUniswapV2Factory>;
     getContractAt(
+      name: "IUniswapV2Migrator",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Migrator>;
+    getContractAt(
       name: "IUniswapV2Pair",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.IUniswapV2Pair>;
     getContractAt(
-      name: "Lock",
+      name: "IUniswapV2Router01",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IUniswapV2Router01>;
+    getContractAt(
+      name: "IUniswapV2Router02",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV2Router02>;
+    getContractAt(
+      name: "IWETH",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWETH>;
+    getContractAt(
+      name: "IUniswapV1Exchange",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV1Exchange>;
+    getContractAt(
+      name: "IUniswapV1Factory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IUniswapV1Factory>;
     getContractAt(
       name: "Migrations",
       address: string | ethers.Addressable,
@@ -109,11 +259,77 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.SwapPair>;
     getContractAt(
+      name: "SwapRouterV1",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SwapRouterV1>;
+    getContractAt(
+      name: "SwapRouterV2",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SwapRouterV2>;
+    getContractAt(
+      name: "DeflatingERC20",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.DeflatingERC20>;
+    getContractAt(
       name: "ERC20",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.ERC20>;
+    getContractAt(
+      name: "RouterEventEmitter",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.RouterEventEmitter>;
+    getContractAt(
+      name: "WETH9",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.WETH9>;
+    getContractAt(
+      name: "UniswapV2Migrator",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.UniswapV2Migrator>;
 
+    deployContract(
+      name: "FixedPoint",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FixedPoint>;
+    deployContract(
+      name: "IUniswapV2Callee",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Callee>;
+    deployContract(
+      name: "IUniswapV2Factory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Factory>;
+    deployContract(
+      name: "IUniswapV2Pair",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Pair>;
+    deployContract(
+      name: "ExampleComputeLiquidityValue",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleComputeLiquidityValue>;
+    deployContract(
+      name: "ExampleFlashSwap",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleFlashSwap>;
+    deployContract(
+      name: "ExampleOracleSimple",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleOracleSimple>;
+    deployContract(
+      name: "ExampleSlidingWindowOracle",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleSlidingWindowOracle>;
+    deployContract(
+      name: "ExampleSwapToPrice",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleSwapToPrice>;
     deployContract(
       name: "IERC20",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -131,13 +347,33 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IUniswapV2Factory>;
     deployContract(
+      name: "IUniswapV2Migrator",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Migrator>;
+    deployContract(
       name: "IUniswapV2Pair",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IUniswapV2Pair>;
     deployContract(
-      name: "Lock",
+      name: "IUniswapV2Router01",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IUniswapV2Router01>;
+    deployContract(
+      name: "IUniswapV2Router02",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Router02>;
+    deployContract(
+      name: "IWETH",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IWETH>;
+    deployContract(
+      name: "IUniswapV1Exchange",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV1Exchange>;
+    deployContract(
+      name: "IUniswapV1Factory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV1Factory>;
     deployContract(
       name: "Migrations",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -155,10 +391,79 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.SwapPair>;
     deployContract(
+      name: "SwapRouterV1",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapRouterV1>;
+    deployContract(
+      name: "SwapRouterV2",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapRouterV2>;
+    deployContract(
+      name: "DeflatingERC20",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.DeflatingERC20>;
+    deployContract(
       name: "ERC20",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ERC20>;
+    deployContract(
+      name: "RouterEventEmitter",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.RouterEventEmitter>;
+    deployContract(
+      name: "WETH9",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.WETH9>;
+    deployContract(
+      name: "UniswapV2Migrator",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.UniswapV2Migrator>;
 
+    deployContract(
+      name: "FixedPoint",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FixedPoint>;
+    deployContract(
+      name: "IUniswapV2Callee",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Callee>;
+    deployContract(
+      name: "IUniswapV2Factory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Factory>;
+    deployContract(
+      name: "IUniswapV2Pair",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Pair>;
+    deployContract(
+      name: "ExampleComputeLiquidityValue",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleComputeLiquidityValue>;
+    deployContract(
+      name: "ExampleFlashSwap",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleFlashSwap>;
+    deployContract(
+      name: "ExampleOracleSimple",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleOracleSimple>;
+    deployContract(
+      name: "ExampleSlidingWindowOracle",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleSlidingWindowOracle>;
+    deployContract(
+      name: "ExampleSwapToPrice",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ExampleSwapToPrice>;
     deployContract(
       name: "IERC20",
       args: any[],
@@ -180,15 +485,40 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IUniswapV2Factory>;
     deployContract(
+      name: "IUniswapV2Migrator",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Migrator>;
+    deployContract(
       name: "IUniswapV2Pair",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.IUniswapV2Pair>;
     deployContract(
-      name: "Lock",
+      name: "IUniswapV2Router01",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.Lock>;
+    ): Promise<Contracts.IUniswapV2Router01>;
+    deployContract(
+      name: "IUniswapV2Router02",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV2Router02>;
+    deployContract(
+      name: "IWETH",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IWETH>;
+    deployContract(
+      name: "IUniswapV1Exchange",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV1Exchange>;
+    deployContract(
+      name: "IUniswapV1Factory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.IUniswapV1Factory>;
     deployContract(
       name: "Migrations",
       args: any[],
@@ -210,10 +540,40 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.SwapPair>;
     deployContract(
+      name: "SwapRouterV1",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapRouterV1>;
+    deployContract(
+      name: "SwapRouterV2",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapRouterV2>;
+    deployContract(
+      name: "DeflatingERC20",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.DeflatingERC20>;
+    deployContract(
       name: "ERC20",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ERC20>;
+    deployContract(
+      name: "RouterEventEmitter",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.RouterEventEmitter>;
+    deployContract(
+      name: "WETH9",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.WETH9>;
+    deployContract(
+      name: "UniswapV2Migrator",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.UniswapV2Migrator>;
 
     // default types
     getContractFactory(

@@ -1,30 +1,26 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const adminAddress = "0xF48C993dea34AFbe3e0Bb28b36A23675e28ec52a";
-  const feeCollectingAddress = "0xF48C993dea34AFbe3e0Bb28b36A23675e28ec52a";
+ 
 
-   const accounts = await ethers.getSigners();
-
-  const dC = await ethers.getContractFactory("SwapFactory");
-  const deployedC = await  dC.deploy(adminAddress);
-
-  await deployedC.waitForDeployment();
-  console.log(await deployedC.feeToSetter())
-
-  console.log("Contract Deployment Hash: ",deployedC.deploymentTransaction()?.hash)
+  const factoryAddress = "";
+  const WETH = "0xc778417e063141139fce010982780140aa0cd5ab";
   
+ 
 
-  const setFeeTX = await deployedC.connect(accounts[0]).setFeeTo(feeCollectingAddress);
-
-  await setFeeTX.wait();
+  const swap_router = await ethers.getContractFactory("SwapRouterV2");
+  const swapRouter = await swap_router.deploy(factoryAddress,WETH);
 
   
 
+  console.log(swapRouter.deploymentTransaction);
+
+  const account = await ethers.getSigners();
+  const adminAddress = account[0];
 
   console.log(
     `admin address ${adminAddress
-    } deployed to ${deployedC.target}`
+    } deployed to ${swapRouter.target}`
   );
 }
 
