@@ -37,8 +37,8 @@
       ]
     },
     "/Users/dotenterprises/Desktop/Portfolio/uniswap_fork/dex_forking/ShaziSwap-Core/contracts/SwapERC20.sol": {
-      "lastModificationDate": 1701143384307,
-      "contentHash": "51e59f2b3b8aefe3994a7e2f8fbf76cb",
+      "lastModificationDate": 1701225067329,
+      "contentHash": "ece01303d5b17f414eaf679eb3c09154",
       "sourceName": "contracts/SwapERC20.sol",
       "solcConfig": {
         "version": "0.5.16",
@@ -145,7 +145,7 @@
       ]
     },
     "/Users/dotenterprises/Desktop/Portfolio/uniswap_fork/dex_forking/ShaziSwap-Core/contracts/test/ERC20.sol": {
-      "lastModificationDate": 1701143384305,
+      "lastModificationDate": 1701183841723,
       "contentHash": "c13c7174b4ce101cdd7adb5edce33346",
       "sourceName": "contracts/test/ERC20.sol",
       "solcConfig": {
@@ -182,7 +182,7 @@
       ]
     },
     "/Users/dotenterprises/Desktop/Portfolio/uniswap_fork/dex_forking/ShaziSwap-Core/contracts/SwapPair.sol": {
-      "lastModificationDate": 1701143384316,
+      "lastModificationDate": 1701183841721,
       "contentHash": "4a0791faea95e726b61faaddd8576119",
       "sourceName": "contracts/SwapPair.sol",
       "solcConfig": {
@@ -435,7 +435,7 @@
       ]
     },
     "/Users/dotenterprises/Desktop/Portfolio/uniswap_fork/dex_forking/ShaziSwap-Core/contracts/SwapFactory.sol": {
-      "lastModificationDate": 1701143384308,
+      "lastModificationDate": 1701183841721,
       "contentHash": "42aac6397194d93ebc0fba373ebdade7",
       "sourceName": "contracts/SwapFactory.sol",
       "solcConfig": {

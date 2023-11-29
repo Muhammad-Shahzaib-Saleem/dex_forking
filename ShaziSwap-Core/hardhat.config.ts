@@ -23,6 +23,7 @@ const chainIds = {
 };
 
 const privateKey = process.env.PRIVATE_KEY ?? "NO_PRIVATE_KEY";
+const etherscanApiKey = process.env.ETHERSCAN_API_KEY ?? "NO_API_KEY";
 
 
 const config: HardhatUserConfig = {
@@ -33,6 +34,22 @@ const config: HardhatUserConfig = {
       url: `https://rpc.ankr.com/eth_goerli`,
       gasPrice: "auto",
     }
+  },
+  etherscan: {
+    apiKey: {
+      mainnet: etherscanApiKey,
+      goerli: etherscanApiKey,
+      kovan: etherscanApiKey,
+      rinkeby: etherscanApiKey,
+      ropsten: etherscanApiKey,
+      // bsc: bscscanApiKey,
+      // bscTestnet: bscscanApiKey,
+      // polygon: polygonscanApiKey,
+      // polygonMumbai: polygonscanApiKey,
+      // avalanche: snowscanApiKey,
+      // avalancheFujiTestnet: snowscanApiKey,
+      // opera: ftmscanApiKey,
+    },
   },
   solidity: "0.5.16",
 };

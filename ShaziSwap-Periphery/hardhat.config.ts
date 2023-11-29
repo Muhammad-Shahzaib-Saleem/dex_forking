@@ -34,7 +34,7 @@ const config: HardhatUserConfig = {
       gasPrice: "auto",
     }
   },
-  solidity: "0.5.16",
+  solidity: "0.6.6",
 };
 
 export default config;
